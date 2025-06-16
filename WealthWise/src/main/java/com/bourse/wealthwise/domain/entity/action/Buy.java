@@ -40,7 +40,7 @@ public class Buy extends BaseAction {
                         .portfolio(this.portfolio)
                         .datetime(this.datetime)
                         .security(this.security)
-                        .volumeChange(this.totalValue)
+                        .volumeChange(this.volume)
                         .action(this)
                         .build()
         );
