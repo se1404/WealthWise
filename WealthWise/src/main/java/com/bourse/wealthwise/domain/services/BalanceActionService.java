@@ -21,7 +21,7 @@ public class BalanceActionService {
                                 .orElseThrow(() -> new IllegalArgumentException("Portfolio not found"))
                                 .getUuid()
                 ).stream()
-                .filter(action -> action.getDatetime() != null && action.getDatetime().isBefore(localDateTime))
+                .filter(action -> action.getDatetime() != null && !action.getDatetime().isAfter(localDateTime))
                 .map(action -> action.getBalanceChanges().getFirst().getChange_amount())
                 .reduce(BigInteger.ZERO, BigInteger::add);
     }

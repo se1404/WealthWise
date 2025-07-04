@@ -26,7 +26,7 @@ public class PortfolioActionService {
                                 .orElseThrow(() -> new IllegalArgumentException("Portfolio not found"))
                                 .getUuid()
                 ).stream()
-                .filter(action -> action.getDatetime() != null && action.getDatetime().isBefore(localDateTime))
+                .filter(action -> action.getDatetime() != null && !action.getDatetime().isAfter(localDateTime))
                 .map(action -> action.accept(visitor))
                 .toList();
     }
