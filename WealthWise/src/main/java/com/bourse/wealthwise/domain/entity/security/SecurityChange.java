@@ -3,11 +3,13 @@ package com.bourse.wealthwise.domain.entity.security;
 import com.bourse.wealthwise.domain.entity.action.BaseAction;
 import com.bourse.wealthwise.domain.entity.portfolio.Portfolio;
 import lombok.Builder;
+import lombok.Getter;
 
 import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Getter
 @Builder
 public class SecurityChange {
     private UUID uuid;
@@ -22,6 +24,5 @@ public class SecurityChange {
     private Boolean isTradable;
 
     private BigInteger volumeChange;
-
 
 }
